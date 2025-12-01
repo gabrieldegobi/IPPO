@@ -3,6 +3,10 @@
   justify-content: center;
   align-items: center;
   max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  flex-direction: column;
+  text-align: center;
 }
 
 .form {
@@ -20,10 +24,21 @@
   margin-bottom: 10px;
 }
 
-.form input{
-   /* height: ;*/
-    border: none;
-    margin-top: 5px;
-    border-radius: 10px;
-    padding: 1rem;
+.form input {
+  /* height: ;*/
+  border: none;
+  margin-top: 5px;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.container_esquerdo {
+  transition: 0.5s;
+}
+
+button {
+  border: none;
+  margin-top: 5px;
+  border-radius: 10px;
+  padding: 1rem;
 }
