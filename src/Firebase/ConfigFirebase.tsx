@@ -8,7 +8,7 @@ import { getFirestore } from "firebase/firestore";
 // Your web app's Firebase configuration
 
 const apiKeyVite = import.meta.env.VITE_FIREBASE_API_KEY;
-console.log(apiKeyVite)
+
 const firebaseConfig = {
   apiKey: apiKeyVite,
   authDomain: "igreja-ippo.firebaseapp.com",

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 
 import style from "./Login.module.css";
 import { useAuth } from "../../Context/AuthContext";
@@ -9,7 +9,7 @@ const Login = () => {
   const [password, setPassword] = useState<string>("");
   const [name, setName] = useState<string>("");
 
-  const {loading, login, signup, user } = useAuth();
+  const {loading, login, signup } = useAuth();
 
   const navigate = useNavigate();
 

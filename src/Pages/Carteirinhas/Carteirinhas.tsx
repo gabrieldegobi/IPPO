@@ -1,8 +1,6 @@
-import React from 'react'
 
-type Props = {}
 
-const Carteirinhas = (props: Props) => {
+const Carteirinhas = () => {
   return (
     <div>Carteirinhas</div>
   )

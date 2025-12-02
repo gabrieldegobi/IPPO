@@ -1,8 +1,6 @@
-import React from 'react'
 
-type Props = {}
 
-const Membros = (props: Props) => {
+const Membros = () => {
   return (
     <div>Membros</div>
   )
