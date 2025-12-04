@@ -16,10 +16,10 @@ const RoutesApp = () => {
   return (
     <BrowserRouter>
       <AuthProvider>
-        <NavBar />
+        {user && <NavBar />}
         <Routes>
-          <Route path="/" element={<Home />} />
           <Route path="/signup" element={<Login />} />
+          <Route path="/" element={<Home />} />
           {user && <Route path="/membros" element={<Membros />} />}
           {user && <Route path="/carteirinhas" element={<Carteirinhas />} />}
           {user && <Route path="/certificados" element={<Certificados />} />}

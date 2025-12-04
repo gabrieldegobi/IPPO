@@ -1,0 +1,55 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-color: #800020;
+  background-image: url("https://wallpapers.com/images/hd/red-pc-1f20pfxfd1riqxxm.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.bluer {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.wellcome {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+
+.wellcome h1 {
+  font-size: 6rem;
+  transition: 0.5s;
+}
+.button {
+  border: 1px solid #800020;
+  background-color: #800020;
+  color: #f8f8f2;
+  width: 50%;
+  margin-top: 5px;
+  border-radius: 10px;
+  padding: 1rem;
+  transition: 0.5s;
+  cursor: pointer;
+  list-style: none;
+  
+}
+.button:hover {
+  background-color: #f8f8f2;
+  color: #800020;
+}
+
+
+
+
+
+
+
+

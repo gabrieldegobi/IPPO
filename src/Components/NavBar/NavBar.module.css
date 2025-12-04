@@ -1,7 +1,8 @@
+
 .header {
-  border-bottom: 2px solid #111;
-  padding: 1rem;
-  background-color: #111;
+  border-bottom: 2px solid #FFDB58;
+  padding: 0.5rem;
+  background-color: #008060;
 }
 
 .header nav {
@@ -13,7 +14,7 @@
 }
 
 .header nav .container_logo {
-  width: 80px;
+  width: 50px;
 }
 
 .header nav .container_logo img {
@@ -32,7 +33,10 @@
 
 .header nav li a {
   list-style: none;
-  color: yellow;
+  color: #FFDB58;
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  font-family: "Roboto Slab", serif;
+
 }
