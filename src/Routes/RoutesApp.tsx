@@ -18,8 +18,8 @@ const RoutesApp = () => {
       <AuthProvider>
         {user && <NavBar />}
         <Routes>
-          <Route path="/signup" element={<Login />} />
           <Route path="/" element={<Home />} />
+          <Route path="/signup" element={<Login />} />
           {user && <Route path="/membros" element={<Membros />} />}
           {user && <Route path="/carteirinhas" element={<Carteirinhas />} />}
           {user && <Route path="/certificados" element={<Certificados />} />}
