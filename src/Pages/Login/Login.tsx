@@ -8,16 +8,31 @@ const Login = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [name, setName] = useState<string>("");
-  
+
   const { loading, login, signup } = useAuth();
   const [error, setError] = useState<string>("");
 
   const navigate = useNavigate();
-  
+
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
 
-   
+    //validations
+    if (name.trim().length === 0) {
+      setError("O nome é obrigatorio");
+    }
+
+    if (name.trim().length < 6) {
+      setError("O nome precisa de pelo menos 6 Caracteres");
+    }
+    if (!/\S+@\S+\.\S+/.test(email)) {
+      setError("Formato de email inválido");
+    }
+
+    if (password.length < 6) {
+      setError("A senha precisa de pelo menos 6 Caracteres");
+    }
+
     if (cadastrado === true) {
       try {
         await signup(email, password, name); // ← AQUI você envia os dados
