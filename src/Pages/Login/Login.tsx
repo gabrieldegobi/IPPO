@@ -8,54 +8,64 @@ const Login = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [name, setName] = useState<string>("");
-
-  const { loading, login, signup } = useAuth();
-  const [error, setError] = useState<string>("");
+  const [cadastrado, setCadastrado] = useState<boolean>(true);
+  const [loading, setLoading] = useState<boolean>(false);
+  const { login, signup } = useAuth();
+  const [error, setError] = useState<string | null>(null);
 
   const navigate = useNavigate();
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    setError(null); //limpar erro
 
     //validations
-    if (name.trim().length === 0) {
+    if (name.trim().length === 0 && cadastrado) {
       setError("O nome é obrigatorio");
+      return;
     }
 
-    if (name.trim().length < 6) {
+    if (name.trim().length < 6 && cadastrado) {
       setError("O nome precisa de pelo menos 6 Caracteres");
+      return;
     }
     if (!/\S+@\S+\.\S+/.test(email)) {
       setError("Formato de email inválido");
+      return;
     }
 
     if (password.length < 6) {
       setError("A senha precisa de pelo menos 6 Caracteres");
+      return;
     }
 
     if (cadastrado === true) {
       try {
+        setLoading(true);
         await signup(email, password, name); // ← AQUI você envia os dados
         console.log("cadastrado com sucesso!");
         navigate("/");
       } catch (err) {
         console.error("Erro ao cadastrar:", err);
       }
+      setLoading(false);
     } else {
       try {
+        setLoading(true);
         await login(email, password); // ← AQUI você envia os dados
         console.log("Logado com sucesso!");
         navigate("/");
-      } catch (err) {
-        console.error("Erro ao logar:", err);
+      } catch (err: any) {
+        setError(err.message || "erro Inesperado");
       }
+      setLoading(false);
     }
   }
   console.log(loading);
-  const [cadastrado, setCadastrado] = useState<boolean>(true);
 
   return (
     <div className={style.page}>
+      {loading && <div className={style.carregando}></div>}
       <div className={style.form}>
         <form className={style.container_form} onSubmit={handleSubmit}>
           {cadastrado && (
@@ -90,7 +100,7 @@ const Login = () => {
           <button className={style.button} type="submit">
             Enviar
           </button>
-          {error && <p>{error}</p>}
+          {error && <p className={style.error}>{error}</p>}
           {cadastrado && (
             <button
               className={style.button}

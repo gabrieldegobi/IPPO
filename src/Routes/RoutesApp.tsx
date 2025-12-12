@@ -16,7 +16,7 @@ const RoutesApp = () => {
   return (
     <BrowserRouter>
       <AuthProvider>
-        <NavBar />
+       {user && <NavBar />}
         
         <Routes>
           <Route path="/" element={<Home />} />

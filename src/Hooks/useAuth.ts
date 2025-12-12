@@ -7,7 +7,9 @@ import {
 
 import { auth } from "../Firebase/ConfigFirebase";
 
+
 export function useAuthFunction() {
+  
   async function signup(email: string, password: string, name: string) {
     const cred = await createUserWithEmailAndPassword(auth, email, password);
     // Atualiza o nome do usuário no Firebase
@@ -21,7 +23,9 @@ export function useAuthFunction() {
   }
 
   async function login(email: string, password: string) {
-    return signInWithEmailAndPassword(auth, email, password);
+    return await signInWithEmailAndPassword(auth, email, password);
+    
+    
   }
   async function logout() {
     return signOut(auth);

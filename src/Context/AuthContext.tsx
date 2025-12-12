@@ -7,7 +7,6 @@ import { useAuthFunction } from "../Hooks/useAuth";
 // Tipo do contexto
 interface AuthContextInterface {
   user: User | null;
-  loading: boolean;
   signup: (email: string, password: string,name:string) => Promise<UserCredential>;
   login: (email: string, password: string) => Promise<UserCredential>;
   logout: () => Promise<void>;
@@ -28,7 +27,6 @@ export function useAuth() {
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
-  const [loading, setLoading] = useState(true);
 
   //importa funções do Hook externo
 
@@ -38,13 +36,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const unsub = onAuthStateChanged(auth, (u) => {
       setUser(u);
-      setLoading(false);
     });
     return () => unsub();
   }, []);
   
   return (
-    <AuthContext.Provider value={{ user, loading, signup, login, logout }}>
+    <AuthContext.Provider value={{ user,  signup, login, logout }}>
       {children}
     </AuthContext.Provider>
   );

@@ -1,18 +1,44 @@
-import { useNavigate } from "react-router-dom"
-import styles from "./Home.module.css"
+import { useNavigate } from "react-router-dom";
+import styles from "./Home.module.css";
+import { useAuth } from "../../Context/AuthContext";
+import { IoMdPeople } from "react-icons/io";
+import { FaAddressCard } from "react-icons/fa";
+import { TbCertificate } from "react-icons/tb";
 
 const Home = () => {
-
-  const navigate = useNavigate()
+  const { user } = useAuth();
+  const navigate = useNavigate();
+  
   return (
     <section className={styles.container}>
       <div className={styles.bluer}></div>
-      <div className={styles.wellcome}>
-        <h1>Wellcome</h1>
-        <button onClick={()=>navigate('/signup')} className={styles.button}>Fazer Login</button>
-      </div>
-    </section>
-  )
-}
+      {!user && (
+        <div className={styles.wellcome}>
+          <h1>Wellcome</h1>
+          <button onClick={() => navigate("/signup")} className={styles.button}>
+            Fazer Login
+          </button>
+        </div>
+      )}
 
-export default Home
+      {user && (
+        <div className={styles.cards}>
+          <div className={styles.card}>
+            <IoMdPeople className={styles.icon} />
+            <p>Membros</p>
+          </div>
+          <div className={styles.card}>
+            <FaAddressCard className={styles.icon} />
+            <p>Carteirinhas</p>
+          </div>
+          <div className={styles.card}>
+            <TbCertificate className={styles.icon} />
+            <p>Certificados</p>
+          </div>
+        </div>
+      )}
+    </section>
+  );
+};
+
+export default Home;
