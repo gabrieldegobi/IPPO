@@ -1,5 +1,5 @@
 .container {
-  width: 100vw;
+  box-sizing: border-box;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -9,7 +9,6 @@
   background-size: cover;
   background-position: center;
   position: relative;
-  box-sizing: border-box;
 }
 .bluer {
   position: absolute;
@@ -49,6 +48,7 @@
 }
 
 .cards {
+  padding: 0 2rem;
   box-sizing: border-box;
   width: 100%;
   max-width: 1200px;

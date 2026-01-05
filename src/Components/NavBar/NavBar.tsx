@@ -19,7 +19,7 @@ const NavBar = () => {
           <li>
             <Link to={"/"}>Inicio</Link>
           </li>
-          {user && (
+          {/*user && (
             <>
               <li>
                 <Link to={"membros"}>Membros</Link>
@@ -31,7 +31,7 @@ const NavBar = () => {
                 <Link to={"certificados"}>Certificados</Link>
               </li>
             </>
-          )}
+          )*/}
           {!user && (
             <li>
               <Link to={"signup"}>Signup</Link>

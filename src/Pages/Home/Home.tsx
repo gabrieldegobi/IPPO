@@ -23,15 +23,15 @@ const Home = () => {
 
       {user && (
         <div className={styles.cards}>
-          <div className={styles.card}>
-            <IoMdPeople className={styles.icon} />
+          <div className={styles.card} onClick={() => navigate("/membros")} >
+            <IoMdPeople className={styles.icon}  />
             <p>Membros</p>
           </div>
-          <div className={styles.card}>
+          <div className={styles.card} onClick={() => navigate("/carteirinhas")}>
             <FaAddressCard className={styles.icon} />
             <p>Carteirinhas</p>
           </div>
-          <div className={styles.card}>
+          <div className={styles.card} onClick={() => navigate("/certificados")}>
             <TbCertificate className={styles.icon} />
             <p>Certificados</p>
           </div>
