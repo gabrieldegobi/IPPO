@@ -20,7 +20,7 @@ const Membros = () => {
 
   const [spouseName, setSpouseName] = useState<string>('')
   const [cpf, setCpf] = useState<string>('')
-
+  const [cargo, setCargo] = useState<string>('')
   const [cep, setCep] = useState<string>("")
   const [endereco, setEndereco] = useState<string>('')
   const [bairro, setBairro] = useState<string>('')
@@ -103,14 +103,16 @@ const Membros = () => {
           {/*CPF*/}
           <div>
             <label htmlFor="CPF">CPF:</label>
-            <input type="string"  maxLength={11} required
+            <input type="string" maxLength={11} required
               onChange={(e: React.ChangeEvent<HTMLInputElement>) => setCpf(e.target.value)}
               value={cpf} />
           </div>
 
           <div>
             <label htmlFor="cargo">Cargo:</label>
-            <select name="Cargo" id="">
+            <select name="Cargo" id=""
+              onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setCargo(e.target.value)}
+              value={cargo}>
               <option value="">Selecione</option>
               <option value="Membro">Membro</option>
               <option value="Obreiro">Obreiro</option>
@@ -178,7 +180,7 @@ const Membros = () => {
             </select>
           </div>
         </div>
-        
+
         <button>Enviar Formulario</button>
       </form >
     </div >

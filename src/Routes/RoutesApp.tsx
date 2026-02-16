@@ -1,9 +1,8 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {  Routes, Route, HashRouter } from "react-router-dom";
 
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import NavBar from "../Components/NavBar/NavBar";
-import { AuthProvider } from "../Context/AuthContext";
 
 import { useAuth } from "../Context/AuthContext";
 import Membros from "../Pages/Membros/Membros";
@@ -14,8 +13,7 @@ import NotFound from "../Pages/NotFound/NotFound";
 const RoutesApp = () => {
   const { user } = useAuth();
   return (
-    <BrowserRouter>
-      <AuthProvider>
+    <HashRouter>
        {user && <NavBar />}
         
         <Routes>
@@ -26,8 +24,7 @@ const RoutesApp = () => {
           {user && <Route path="/certificados" element={<Certificados />} />}
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </AuthProvider>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
