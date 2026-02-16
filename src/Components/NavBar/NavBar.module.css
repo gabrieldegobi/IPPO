@@ -1,0 +1,43 @@
+
+.header {
+  border-bottom: 2px solid #FFDB58;
+  padding: 0.5rem;
+  background-color: #008060;
+  width: 100%;
+}
+
+.header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header nav .container_logo {
+  width: 50px;
+}
+
+.header nav .container_logo img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.header nav ul {
+  display: flex;
+  gap: 20px;
+}
+
+.header nav li {
+  list-style: none;
+}
+
+.header nav li a {
+  list-style: none;
+  color: #FFDB58;
+  text-decoration: none;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  font-family: "Roboto Slab", serif;
+
+}
