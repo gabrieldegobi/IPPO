@@ -1,0 +1,94 @@
+.container {
+  box-sizing: border-box;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-color: #800020;
+  background-image: url("https://wallpapers.com/images/hd/red-pc-1f20pfxfd1riqxxm.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.bluer {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.wellcome {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.wellcome h1 {
+  font-size: 6rem;
+  transition: 0.5s;
+}
+.button {
+  border: 1px solid #800020;
+  background-color: #800020;
+  color: #f8f8f2;
+  width: 50%;
+  margin-top: 5px;
+  border-radius: 10px;
+  padding: 1rem;
+  transition: 0.5s;
+  cursor: pointer;
+  list-style: none;
+}
+.button:hover {
+  background-color: #f8f8f2;
+  color: #800020;
+}
+
+.cards {
+  padding: 0 2rem;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  gap: 20px;
+  justify-content: center;
+  cursor: pointer;
+}
+.cards::after {
+  content: "";
+  width: 300px;
+  height: 0; /* invisível */
+}
+.card {
+  width: 300px;
+  height: 300px;
+  border: 1px solid #5b5a5a;
+  color: green;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  position: relative; /* para z-index funcionar */
+  z-index: 1;
+  cursor: pointer;
+  transition: .5s;
+  background-color: rgba(255, 255, 255,0.5);
+}
+.card:hover {
+  background-color: #5b5a5a;
+  color: black;
+}
+
+.card .icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.card p {
+  font-size: 1rem;
+}
