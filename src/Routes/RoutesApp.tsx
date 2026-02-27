@@ -9,6 +9,7 @@ import Membros from "../Pages/Membros/Membros";
 import Carteirinhas from "../Pages/Carteirinhas/Carteirinhas";
 import Certificados from "../Pages/Certificados/Certificados";
 import NotFound from "../Pages/NotFound/NotFound";
+import Formulario from "../Pages/Formulario/Formulario";
 
 const RoutesApp = () => {
   const { user } = useAuth();
@@ -22,6 +23,7 @@ const RoutesApp = () => {
           {user && <Route path="/membros" element={<Membros />} />}
           {user && <Route path="/carteirinhas" element={<Carteirinhas />} />}
           {user && <Route path="/certificados" element={<Certificados />} />}
+          {user && <Route path="/formulario" element={<Formulario />} />}
           <Route path="*" element={<NotFound />} />
         </Routes>
     </HashRouter>

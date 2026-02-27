@@ -35,6 +35,10 @@ const Home = () => {
             <TbCertificate className={styles.icon} />
             <p>Certificados</p>
           </div>
+          <div className={styles.card} onClick={() => navigate("/formulario")}>
+            <TbCertificate className={styles.icon} />
+            <p>Formulario</p>
+          </div>
         </div>
       )}
     </section>
